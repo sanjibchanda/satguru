@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "CenturyGothicRegular";
+  src: url("../webfonts/CenturyGothicRegular.woff") format("woff"),
+    url("../webfonts/CenturyGothicRegular.woff2") format("woff2"),
+    url("../webfonts/CenturyGothicRegular.svg#CenturyGothicRegular")
+      format("svg"),
+    url("../webfonts/CenturyGothicRegular.eot"),
+    url("../webfonts/CenturyGothicRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../webfonts/CenturyGothicRegular.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
