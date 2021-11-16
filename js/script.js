@@ -13,7 +13,23 @@ $(".center").slick({
   slidesToShow: 5,
   responsive: [
     {
-      breakpoint: 1400,
+      breakpoint: 2000,
+      settings: {
+        centerMode: true,
+        centerPadding: "90px",
+        slidesToShow: 6,
+      },
+    },
+    {
+      breakpoint: 1680,
+      settings: {
+        centerMode: true,
+        centerPadding: "90px",
+        slidesToShow: 5,
+      },
+    },
+    {
+      breakpoint: 1440,
       settings: {
         centerMode: true,
         centerPadding: "90px",
