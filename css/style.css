@@ -45,6 +45,7 @@ img {
 /*global style*/
 .container {
   max-width: 1280px;
+  position: relative;
 }
 .flow > * + * {
   margin-top: var(--flow-spacer, 0.5em);
@@ -115,6 +116,11 @@ a:hover {
   background: var(--secondary);
   border: 1px dashed var(--secondary);
   color: var(--light);
+}
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 12px 16px;
+  height: 40px;
 }
 .text-accentdark {
   color: var(--accentLight) !important;

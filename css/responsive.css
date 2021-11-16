@@ -126,3 +126,14 @@
     border-top: 1px var(--border) solid;
   }
 }
+@media screen and (min-width: 1440px) {
+}
+@media screen and (min-width: 1920px) {
+  .header_wrap {
+    max-width: 1720px;
+    margin: 0 auto;
+  }
+  .nav-menu .menu li + li {
+    padding-left: 3.25rem;
+  }
+}
