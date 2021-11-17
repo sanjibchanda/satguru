@@ -1,10 +1,18 @@
 /*media query*/
 @media screen and (min-width: 576px) {
+  .copyright {
+    flex-direction: row;
+  }
+  /*enquire section*/
   .enquire_box {
-    padding: 2.75rem;
+    flex-basis: 400px;
   }
 }
 @media screen and (min-width: 768px) {
+  /*.... section tour.....*/
+  .section_tour {
+    padding: 6rem 0;
+  }
 }
 @media screen and (min-width: 992px) {
   .nav-menu .menu {
@@ -62,6 +70,16 @@
     max-width: 120px;
     padding: 0;
   }
+  .country_badge {
+    max-width: 100%;
+  }
+
+  /*....tour section....*/
+  .slick-prev,
+  .slick-next {
+    top: -5rem;
+    bottom: inherit;
+  }
 
   /*....section package....*/
   .section_package .link {
@@ -70,16 +88,17 @@
     top: 3rem;
   }
   /*....section enquire....*/
-  .section_enquire {
-    margin-top: 11rem;
-  }
   .enquire_box {
     margin-top: -11rem;
+    padding: 2.75rem;
+  }
+  .enquire_box {
+    flex-basis: 480px;
   }
 }
 @media screen and (min-width: 1200px) {
   .nav-menu .menu li + li {
-    padding-left: 2rem;
+    padding-left: 1.5rem;
   }
   .nav-menu .menu .menu-item {
     font-size: 1rem;
@@ -87,11 +106,33 @@
   .search_box {
     max-width: 140px;
   }
+  /*....section enquire....*/
+  .enquire_box {
+    flex-basis: 600px;
+  }
+  .enquire_box .form-control {
+    min-height: 60px;
+    font-size: 1.125rem;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-  .search_box {
-    max-width: 180px;
+  /*.... section enquire
+...........................*/
+  .section_enquire {
+    background-position: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}
+@media screen and (min-width: 1920px) {
+  .header_wrap {
+    max-width: 1720px;
+    margin: 0 auto;
+  }
+  .nav-menu .menu li + li {
+    padding-left: 3.25rem;
   }
 }
 
@@ -126,14 +167,14 @@
     border-top: 1px var(--border) solid;
   }
 }
-@media screen and (min-width: 1440px) {
-}
-@media screen and (min-width: 1920px) {
-  .header_wrap {
-    max-width: 1720px;
-    margin: 0 auto;
+@media (max-width: 374px) {
+  .package_wrap .row .col-6 {
+    width: 100%;
   }
-  .nav-menu .menu li + li {
-    padding-left: 3.25rem;
+  .package_img img {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+    margin: 0 auto;
   }
 }

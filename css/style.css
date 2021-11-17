@@ -22,7 +22,6 @@ body {
   font-family: var(--font-base);
   color: var(--accent);
   overflow-x: hidden;
-  font-size: clamp(1rem, 2vw, 1.125rem);
 }
 h1,
 h2,
@@ -56,7 +55,7 @@ h1 {
   font-family: var(--font-base);
 }
 h2 {
-  font-size: clamp(2rem, 6vw, 3.125rem);
+  font-size: clamp(1.75rem, 6vw, 3rem);
   font-weight: 700;
   font-family: var(--font-heading);
 }
@@ -69,7 +68,7 @@ h5 {
   font-family: var(--font-heading);
 }
 p {
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -121,6 +120,7 @@ a:hover {
   font-size: 0.875rem;
   padding: 12px 16px;
   height: 40px;
+  min-width: 165px;
 }
 .text-accentdark {
   color: var(--accentLight) !important;
@@ -335,6 +335,8 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 90%;
+  margin: 0 auto;
 }
 .country_badge img {
   max-width: 2.5rem;
@@ -367,7 +369,7 @@ a:hover {
 .link a {
   text-decoration: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 .circle {
@@ -390,7 +392,7 @@ a:hover {
 /*.... section tour
 ...........................*/
 .section_tour {
-  padding: 6rem 0;
+  padding: 3rem 0 6rem;
 }
 .tour_slider {
   margin-top: 2rem;
@@ -399,26 +401,32 @@ a:hover {
   height: 370px;
   margin: 0 15px;
   position: relative;
+  overflow: hidden;
   box-shadow: 0px 10px 10px 3px rgb(0 0 0 / 20%);
   -webkit-box-shadow: 0px 10px 10px 3px rgb(0 0 0 / 20%);
   -moz-box-shadow: 0px 10px 10px 3px rgb(0 0 0 / 20%);
 }
+
 .img_box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all ease-in-out 1s;
 }
 .tour_content {
   position: absolute;
   bottom: 0;
   width: 100%;
-  min-height: 80px;
+  height: 100%;
   padding: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
   background: #ffffff;
   background: -moz-linear-gradient(
     top,
     rgb(255 255 255 / 1%) 1%,
-    rgb(0 0 0 / 50%) 100%
+    rgb(0 0 0 / 70%) 100%
   );
   background: -webkit-linear-gradient(
     top,
@@ -430,6 +438,7 @@ a:hover {
     rgb(255 255 255 / 1%) 1%,
     rgb(0 0 0 / 50%) 100%
   );
+  transition: all ease-in-out 1s;
 }
 .tour_content p {
   color: var(--light);
@@ -442,12 +451,25 @@ a:hover {
   display: block;
   font-weight: 500;
 }
+.img_box:hover img {
+  transform: rotate(-10deg) scale(1.5);
+  transition: all ease-in-out 1s;
+}
+.img_box:hover .tour_content {
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 1%) 1%,
+    rgb(0 0 0 / 100%) 100%
+  );
+  transition: all ease-in-out 1s;
+}
 .slick-prev,
 .slick-next {
   font-size: 0.875rem;
   line-height: 0;
   position: absolute;
-  top: -3rem;
+  top: inherit;
+  bottom: -3rem;
   display: block;
   width: 35px;
   height: 35px;
@@ -528,12 +550,12 @@ a:hover {
 }
 .package_content p a {
   color: var(--accentDark);
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
   text-decoration: none;
 }
 .package_content p span {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   display: block;
   font-weight: 500;
   color: var(--accent);
@@ -555,6 +577,7 @@ a:hover {
 }
 .cta_content p {
   margin-bottom: 4.5rem;
+  color: var(--accentDark);
 }
 
 /*.... section testi
@@ -563,7 +586,7 @@ a:hover {
   padding: 4.5rem 0;
 }
 .testi_wrap {
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 .testi_box {
   padding: 0 10px;
@@ -595,9 +618,16 @@ a:hover {
   padding: 4.5rem 0;
   background: url(../images/bg2.jpg) no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: left center;
+  margin-top: 11rem;
+}
+.enquire_wrap {
+  display: flex;
+  justify-content: flex-end;
 }
 .enquire_box {
+  flex-basis: 320px;
+  margin-top: -15rem;
   padding: 2rem 1rem;
   background: var(--light);
   -webkit-box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 10%);
@@ -610,13 +640,13 @@ a:hover {
   margin-top: 10px;
 }
 .enquire_box .form-control {
-  min-height: 60px;
+  min-height: 44px;
   background: var(--light);
   border: 1px solid var(--border);
   /* -webkit-box-shadow: inset 5px -5px 15px 0px rgb(143 143 143 / 10%);
   box-shadow: inset 5px -5px 15px 0px rgb(143 143 143 / 10%); */
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 .enquire_box .btn-primary {
   margin-left: auto;
@@ -690,6 +720,8 @@ a:hover {
 .copyright {
   padding: 2.25rem 0;
   border-top: 1px solid var(--border);
+  flex-direction: column;
+  gap: 1rem;
 }
 .copyright p {
   font-size: 1rem;
@@ -800,7 +832,7 @@ a:hover {
   line-height: 1.7;
   cursor: pointer;
   position: fixed;
-  bottom: 3rem;
+  bottom: 5rem;
   right: 2rem;
   padding: 0.25rem;
   display: none;
