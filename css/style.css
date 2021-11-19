@@ -46,6 +46,10 @@ img {
   max-width: 1280px;
   position: relative;
 }
+.container-max-md {
+  max-width: 53rem;
+  margin: 0 auto;
+}
 .flow > * + * {
   margin-top: var(--flow-spacer, 0.5em);
 }
@@ -59,13 +63,21 @@ h2 {
   font-weight: 700;
   font-family: var(--font-heading);
 }
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
 h4 {
   font-size: clamp(1.25rem, 3vw, 1.375rem);
   font-family: var(--font-heading);
+  font-weight: 700;
 }
 h5 {
   font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.4;
 }
 p {
   font-size: 1rem;
@@ -134,8 +146,17 @@ a:hover {
 .text-light {
   color: var(--light);
 }
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.bg-primary-light {
+  background-color: var(--primaryLight);
+}
 .bg-secondary {
   background-color: var(--secondary) !important;
+}
+.bg-secondary-light {
+  background-color: var(--secondaryLight);
 }
 .wordbreak {
   word-break: break-all;
@@ -387,6 +408,46 @@ a:hover {
 }
 .circle.bg-light {
   background-image: url(../images/arrow-right.png);
+}
+
+/*.... section hero-sm
+...........................*/
+.section_hero-sm {
+  width: 100%;
+  height: 70vh;
+  background: url(../images/hero-about.jpg) no-repeat center top;
+  background-size: cover;
+}
+.hero_agencies {
+  background: url(../images/hero-agencies.jpg) no-repeat center top;
+  background-size: cover;
+}
+.hero_wrapper-sm {
+  --flow-spacer: 1em;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 180px;
+  padding-bottom: 30px;
+}
+.hero_wrapper-sm .breadcum {
+  display: flex;
+}
+.hero_wrapper-sm .breadcum li {
+  font-size: 1rem;
+}
+.hero_wrapper-sm .breadcum li a {
+  color: var(--light);
+  text-decoration: none;
+}
+.hero_wrapper-sm .breadcum li + li {
+  padding-left: 0.5rem;
+}
+.hero_wrapper-sm .breadcum li.active {
+  font-weight: 700;
 }
 
 /*.... section tour
@@ -727,10 +788,321 @@ a:hover {
   font-size: 1rem;
 }
 
+/*.... section map
+...........................*/
+.section_map {
+  padding: 5.5rem 0 2rem;
+}
+
+/*.... section history
+...........................*/
+.section_history {
+  padding: 5rem 0 5.5rem;
+}
+.tab_wrap {
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+  display: block;
+}
+.ah-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 0;
+}
+.ah-tab::before {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(232 255 241) 70%,
+    rgb(232 255 241) 99%
+  );
+}
+.ah-tab::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(232 255 241) 40%,
+    rgb(232 255 241) 99%
+  );
+}
+
+.ah-tab-item {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #63d591;
+  flex-basis: 100%;
+  text-align: center;
+}
+.ah-tab-item span {
+  position: relative;
+  top: -24px;
+}
+.ah-tab > .ah-tab-item {
+  border-bottom: 0px;
+  padding: 24px 0;
+}
+.ah-tab-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  width: 80%;
+  height: 1px;
+  background-color: #63d591;
+}
+.ah-tab-item::before {
+  content: "";
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #63d591;
+  outline: 1px solid #63d591;
+  outline-offset: 2px;
+}
+.ah-tab > .ah-tab-item[data-ah-tab-active="true"] {
+  border: 0px;
+  color: var(--secondary);
+}
+.ah-tab > .ah-tab-item[data-ah-tab-active="true"] span {
+  top: 24px;
+}
+.ah-tab > .ah-tab-item[data-ah-tab-active="true"]::before {
+  background-color: var(--secondary);
+  outline: 6px solid var(--secondary);
+  outline-color: #ffe5d4;
+}
+.ah-tab > .ah-tab-item:hover {
+  border-bottom: 0;
+}
+.ah-tab-content-wrapper {
+  margin: 2rem 0 0;
+}
+.ah-tab-overflow-list .ah-tab-item span {
+  top: 0;
+}
+.ah-tab-overflow-list .ah-tab-item::before,
+.ah-tab-overflow-list .ah-tab-item::after {
+  content: none;
+}
+.ah-tab-overflow-list > .ah-tab-item[data-ah-tab-active="true"] {
+  border-left-color: var(--secondary);
+}
+.ah-tab-item[data-ah-tab-active="true"] {
+  color: var(--secondary);
+}
+.ah-tab-content {
+  padding: 0;
+  border: 1px solid var(--light);
+  background: var(--light);
+  -webkit-box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 30%);
+  box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 30%);
+}
+.ah-tab > .ah-tab-item {
+  margin-right: 0;
+}
+.tab_box {
+  padding: 3rem 1.25rem;
+}
+.year {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--secondary);
+  font-size: 1.5rem;
+  color: var(--light);
+  font-weight: bold;
+  padding: 10px 32px;
+}
+
+/*.... section rating
+...........................*/
+.section_rating {
+  padding: 5rem 0 3rem;
+}
+.rating_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--light);
+  -webkit-box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 15%);
+  box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 15%);
+  margin-bottom: 2rem;
+}
+.rating_box .globe {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.rating_box .title {
+  color: var(--primary);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: bold;
+}
+.rating_box .content {
+  flex-basis: 100%;
+  border-top: 1px solid var(--border);
+  color: var(--accentDark);
+  padding: 0.75rem 0 0;
+  margin-top: 0.75rem;
+}
+
+/*.... section leader
+...........................*/
+.leader_wrap {
+  margin-top: 2.5rem;
+}
+.leader_box {
+  padding: 0 1.5rem 5rem;
+}
+.leader_content {
+  margin-top: 2rem;
+}
+.leader_content .author {
+  font-size: 1.375rem;
+  color: var(--accentDark);
+  font-weight: 700;
+}
+.leader_content .author span {
+  color: var(--secondary);
+  display: block;
+  font-size: 1rem;
+}
+.leader_content a {
+  color: var(--primary);
+}
+
+/*.... section achievement
+...........................*/
+.section_achievement {
+  padding: 6rem 0 5rem;
+}
+
+/*.... section team
+...........................*/
+.section_team {
+  padding: 0 0 4.5rem;
+}
+.portfolio_title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+.portfolio_title h4 {
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+}
+.myBtnContainer {
+  padding-bottom: 0.75rem;
+}
+.myBtnContainer .btn {
+  border-radius: 4px;
+  min-width: auto;
+}
+.gallery_box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.gallery_box > .column {
+  flex-basis: 100%;
+  padding: 0.75rem;
+}
+.column {
+  display: none;
+}
+.show {
+  display: block;
+}
+.portfolio .content {
+  padding: 6px;
+  border: 1px solid var(--border);
+}
+.portfolio .content img {
+  width: 100%;
+}
+/*.... section choose
+...........................*/
+.section_choose {
+  padding: 5rem 0;
+}
+.section_choose h2 {
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+}
+.section_choose .column {
+  margin-top: 2rem;
+}
+/*.... section service
+...........................*/
+.section_service {
+  padding: 5rem 0 3.25rem;
+}
+.section_service h2 {
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+}
+.service_wrap {
+  margin-top: 2.5rem;
+}
+.service_box {
+  padding: 1.5rem;
+  -webkit-box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 10%);
+  box-shadow: 1px 1px 20px 3px rgb(161 161 161 / 10%);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.box-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/*.... section partners
+...........................*/
+.section_partners {
+  padding: 0 0 4rem;
+}
+.section_partners h5 {
+  font-size: clamp(1.25rem, 4vw, 1.625rem);
+}
+.partners_wrap {
+  padding: 0 2rem;
+}
+.partners_wrap .slick-prev,
+.partners_wrap .slick-next {
+  top: 35%;
+  bottom: inherit;
+}
+.partners_wrap .slick-next {
+  right: -30px;
+}
+.partners_wrap .slick-prev {
+  right: inherit;
+  left: -30px;
+}
+.partners_box img {
+  margin: 0 auto;
+}
+
 /*.... section content
 ...........................*/
 .content_area {
   --flow-spacer: 1em;
+  position: relative;
 }
 
 /*....preloader section

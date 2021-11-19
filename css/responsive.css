@@ -1,4 +1,10 @@
 /*media query*/
+@media screen and (min-width: 400px) {
+  /*team section*/
+  .gallery_box > .column {
+    flex-basis: 50%;
+  }
+}
 @media screen and (min-width: 576px) {
   .copyright {
     flex-direction: row;
@@ -7,11 +13,37 @@
   .enquire_box {
     flex-basis: 400px;
   }
+  /*team section*/
+  .gallery_box > .column {
+    flex-basis: 33%;
+  }
+  /*section choose*/
+  .section_choose .column {
+    column-count: 2;
+    column-gap: 3rem;
+  }
 }
 @media screen and (min-width: 768px) {
   /*.... section tour.....*/
   .section_tour {
     padding: 6rem 0;
+  }
+
+  /*.... section history.....*/
+  .ah-tab-item {
+    font-size: 1.125rem;
+  }
+  .tab_box {
+    padding: 3rem 4.5rem;
+  }
+  .year {
+    font-size: 2rem;
+    padding: 10px 48px;
+  }
+
+  /*section choose*/
+  .section_choose .column {
+    column-gap: 5rem;
   }
 }
 @media screen and (min-width: 992px) {
@@ -95,6 +127,10 @@
   .enquire_box {
     flex-basis: 480px;
   }
+  /*team section*/
+  .gallery_box > .column {
+    flex-basis: 20%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .nav-menu .menu li + li {
@@ -113,6 +149,19 @@
   .enquire_box .form-control {
     min-height: 60px;
     font-size: 1.125rem;
+  }
+  /*....section rating....*/
+  .rating_box .content {
+    flex-basis: 40%;
+    border-left: 1px solid var(--border);
+    border-top: 0;
+    color: var(--accentDark);
+    padding: 0.75rem 0 0.75rem 0.75rem;
+    margin-top: 0;
+  }
+  /*....section service....*/
+  .service_box {
+    padding: 1.5rem 2.25rem;
   }
 }
 
